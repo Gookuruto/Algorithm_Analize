@@ -1,4 +1,7 @@
 import random
+import matplotlib.pyplot as plt
+import numpy as np
+
 
 def random_choice(val1, val2, probability_of_val1):
     return val1 if random.random() < probability_of_val1 else val2
@@ -20,4 +23,15 @@ p=[]
 while(j<100):
     p.append(0.01)
     j=j+1
-print Election_p(p)
+
+j=0
+data=[]
+while(j<1000):
+    data.append(Election_p(p))
+    j+=1
+
+
+plt.hist(data)
+plt.xlim(0, 30)
+
+plt.show()
